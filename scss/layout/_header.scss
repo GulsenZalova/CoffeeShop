@@ -1,0 +1,113 @@
+.header{
+    @include flex(flex,space-between,center,row);
+    padding: $padding-m 7%;
+    border-bottom: $border;
+    @include responsive(medium){
+     padding: $padding-xs 3%;     
+    }
+    .header-logo{
+        img{  
+            @include responsive(small){
+            width: 60px !important;   
+            height: 60px !important;
+            object-fit: cover;
+           }
+           @include responsive(medium){
+            width: 80px;   
+            height: 80px;
+            object-fit: cover;
+           }
+        }
+    }
+    .navbar{
+           transition: $transition-600ms;
+           @include responsive(small){
+            background-color: $main-color;
+            position: absolute;
+            top: 0;
+            right: -150%;
+            width: 35rem;
+            height: 100vh;
+           }
+        .close{
+            display: none;
+            @include responsive(small){
+                position: absolute;
+                display: block;
+                top: 0;
+                right: 0;
+                padding: $padding-xl;
+                font-size: $font-xl;
+            }
+        }
+        ul{
+          @include flex(flex,center,center,row);
+          @include responsive(small){
+            padding: $padding-xxl;
+            display: flex;
+            flex-direction: column;
+          }
+          li{
+            margin: $margin-m;
+            @include responsive(medium){
+                margin: $margin-xxs;
+              }  
+            a{  
+                color: white;
+                font-size: $font-l;
+                transition: $transition-200ms;
+                padding: $padding-xs;
+                @include responsive(medium){
+                    font-size: $font-m;
+                  }
+                @include responsive(small){
+                    display: block;
+                    width: 100%;
+                    color: $bg;
+                    border-bottom: $border-bg;
+                    &:hover{
+                        color: $bg !important;
+                        padding-bottom: $padding-xs ;
+                        border-bottom: $border-bg;
+                    }
+                }
+                &:hover{
+                    color: $main-color;
+                    border-bottom: $border;
+                    padding-bottom: $padding-s;
+                }
+            }
+          }
+        }
+    } 
+    .header-icon{
+        display: flex;
+        a{ 
+            margin: $margin-s;
+            color: white;
+            transition: $transition-400ms;
+            @include responsive(medium){
+                margin: $margin-xxs;
+              }
+            i{
+                @include responsive(medium){
+                    font-size: $font-l;
+                  }
+                font-size: $font-xl;
+            }
+            &:hover{
+                color: $main-color;
+            }
+        }
+        .menu{
+            @include responsive(small){
+                display: flex;
+            }
+            display: none;
+        }
+    }
+    .active{
+        transition: $transition-600ms;
+        right: 0;
+    }
+}

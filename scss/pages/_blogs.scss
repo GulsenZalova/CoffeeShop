@@ -1,0 +1,86 @@
+.blogs {
+    @include flex(flex, center, center, column);
+    margin: $margin-m 7%;
+
+    @include responsive(small) {
+        margin: $margin-m 5%;
+    }
+
+    .blogs-items {
+        display: grid;
+        @include grid-3;
+        gap: $gap-l;
+
+        @include responsive(medium) {
+            @include grid-3;
+        }
+
+        @include responsive(small) {
+            @include grid-1;
+        }
+
+        .blogs-items-item {
+            @include flex(flex, center, center, column);
+            overflow: hidden;
+            width: 40rem;
+            height: 50rem;
+            border: 1px solid gray;
+
+            @include responsive(desktop) {
+                width: 35rem;
+            }
+
+            @include responsive(small) {
+                width: 45rem;
+            }
+
+            &:hover {
+                img {
+                    transform: scale(1.2);
+                }
+            }
+
+            .blogs-image {
+                height: 25rem;
+                overflow: hidden;
+                width: 100%;
+
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                    width: 100%;
+                    transition: $transition-200ms;
+                }
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        .blogs-content {
+            @include flex(flex, center, center, column);
+            padding: $padding-l;
+            height: 25rem;
+            text-align: center;
+
+            h1 {
+                font-size: $font-xl;
+                color: $main-color;
+                margin-bottom: $margin-m;
+            }
+
+            span {
+                color: white;
+                margin-bottom: $margin-m;
+                font-size: $font-l;
+            }
+
+            p {
+                color: white;
+                margin-bottom: $margin-m;
+                font-size: $font-l;
+            }
+        }
+    }
+}

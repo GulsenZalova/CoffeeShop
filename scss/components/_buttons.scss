@@ -1,0 +1,16 @@
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: $margin-l;
+    padding: $padding-m;
+    font-size: $font-xl;
+    background-color: black;
+    color: $main-color;
+    transition: $transition-200ms;
+    &:hover{
+        border: $border-bg;
+        background-color: $main-color;
+        color: $bg;
+    }
+}

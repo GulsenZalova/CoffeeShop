@@ -1,0 +1,52 @@
+.home {
+    padding: $padding-m 7%;
+    background-color: aliceblue;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: $bg;
+    background-image: url(/image/home-img.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    object-fit: cover;
+
+    .home-content {
+        width: 70rem;
+
+        @include responsive(small) {
+            width: 50rem;
+            @include flex(flex, center, center, column);
+        }
+
+        h1 {
+            font-size: $font-xxxl;
+            color: $main-color;
+            margin-bottom: $margin-xxl;
+
+            @include responsive(small) {
+                font-size: $font-xxl;
+                text-align: center;
+            }
+
+            @include responsive(medium) {
+                font-size: $font-xxd;
+            }
+        }
+
+        p {
+            font-size: $font-xl;
+            color: white;
+            line-height: $font-xxl;
+            margin-bottom: $margin-xxxl;
+
+            @include responsive(small) {
+                text-align: center;
+            }
+        }
+
+        .btn-main {
+            width: 40%;
+        }
+    }
+}

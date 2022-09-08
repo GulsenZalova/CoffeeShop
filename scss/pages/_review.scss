@@ -1,0 +1,68 @@
+.review {
+    margin: $margin-m 7%;
+
+    @include responsive(small) {
+        margin: $margin-m 3%;
+    }
+
+    .review-itmes {
+        display: grid;
+        @include grid-3;
+        gap: $gap-m;
+
+        @include responsive(medium) {
+            @include grid-2;
+            gap: $gap-l;
+        }
+
+        @include responsive(small) {
+            @include grid-1;
+        }
+
+        .review-items-item {
+            @include flex(flex, center, center, column);
+            overflow: hidden;
+            width: 40rem;
+            height: 40rem;
+            border: 1px solid gray;
+            padding: $padding-l;
+
+            @include responsive(desktop) {
+                width: 35rem;
+            }
+
+            @include responsive(small) {
+                width: 45rem;
+            }
+
+            .quote {
+                width: 50px;
+                height: 50px;
+                margin-bottom: $margin-xl;
+            }
+
+            p {
+                font-size: $font-l;
+                word-wrap: break-word;
+                text-align: center;
+                margin-bottom: $margin-xl;
+                line-height: $line-xl;
+                color: white;
+            }
+
+            .img {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                margin-bottom: $margin-m;
+                object-fit: cover;
+            }
+
+            h1 {
+                font-size: $font-xl;
+                margin: $margin-l;
+                color: white;
+            }
+        }
+    }
+}

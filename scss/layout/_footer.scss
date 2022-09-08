@@ -1,0 +1,50 @@
+.footer{
+    background-color: $black;
+    @include flex(flex,center,center,column);
+    padding: $padding-m;
+    margin-top: $margin-xxxl;
+    .footer-icons{
+       i{
+        color: white;
+        font-size: $font-xl;
+      //   margin: 0 $margin-xxxl;
+        transition: $transition-200ms;
+        padding: $padding-l;
+        border-radius: 50%;
+        border: $border;
+        &:hover{
+           background-color: $main-color;
+        }
+       }
+        
+    }
+    .navbar{
+        margin-top: $margin-l;
+     ul{
+       @include flex(flex,center,center,row);
+       flex-wrap: wrap;
+       li{
+         margin:$margin-m $margin-s; 
+         a{  
+             color: white;
+             font-size: $font-l;
+             transition: $transition-200ms;
+             padding: $padding-s $padding-xl;
+             border: $border;
+             &:hover{
+                background-color: $main-color;
+                color: black;
+             }
+         }
+       }
+     }
+ }
+ p{
+    color: white;
+    font-size: $font-xl;
+    margin-top: $margin-l;
+    span{
+        color: $main-color;
+    }
+ }
+}
