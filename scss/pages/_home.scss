@@ -1,52 +1,92 @@
+
 .home {
-    padding: $padding-m 7%;
-    background-color: aliceblue;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background-color: $bg;
-    background-image: url(/image/home-img.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: right;
-    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
 
-    .home-content {
-        width: 70rem;
+    &-slider {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
 
-        @include responsive(small) {
-            width: 50rem;
-            @include flex(flex, center, center, column);
-        }
+        .home-slide {
+            background-color: red;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.4s linear;
 
-        h1 {
-            font-size: $font-xxxl;
-            color: $main-color;
-            margin-bottom: $margin-xxl;
-
-            @include responsive(small) {
-                font-size: $font-xxl;
-                text-align: center;
+            &:nth-child(1) {
+                background: url(/image/home-img.jpeg) no-repeat center/cover;
             }
 
-            @include responsive(medium) {
-                font-size: $font-xxd;
+            &:nth-child(2) {
+                background: url(/image/about-img.jpeg) no-repeat center/cover;
+            }
+
+            &:nth-child(3) {
+                background: url(/image/blog-1.jpeg)no-repeat center/cover;
+            }
+
+            &:nth-child(4) {
+                background: url(/image/blog-2.jpeg) no-repeat center/cover;
+            }
+
+            &:nth-child(5) {
+                background: url(/image/blog-3.jpeg)no-repeat center/cover;
+            }
+
+            .home-content {
+                position: absolute;
+                top: 20%;
+                left: 10%;
+                padding:$padding-xl $padding-xxl;
+                width: 70rem;
+                height: 30rem;
+                background-color: rgba(0,0,0,0.6);
+             
+
+                @include responsive(small) {
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 45rem;
+                    height: 40rem;
+                    @include flex(flex, center, center, column);
+                }
+
+                h1 {
+                    font-size: $font-xxd;
+                    color: $main-color;
+                    margin-bottom: $margin-xxl;
+
+                    @include responsive(small) {
+                        font-size: $font-s;
+                        text-align: center;
+                    }
+
+                    @include responsive(medium) {
+                        font-size: $font-xxd;
+                    }
+                }
+
+                p {
+                    font-size: $font-xl;
+                    color: white;
+                    line-height: $font-xxl;
+                    margin-bottom: $margin-xxxl;
+
+                    @include responsive(small) {
+                        text-align: center;
+                    }
+                }
             }
         }
-
-        p {
-            font-size: $font-xl;
-            color: white;
-            line-height: $font-xxl;
-            margin-bottom: $margin-xxxl;
-
-            @include responsive(small) {
-                text-align: center;
-            }
-        }
-
-        .btn-main {
-            width: 40%;
+        .active {
+            opacity: 1;
         }
     }
 }

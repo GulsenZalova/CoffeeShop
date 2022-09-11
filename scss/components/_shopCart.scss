@@ -6,6 +6,7 @@
     width: 35rem;
     height: 100vh;
     transition: $transition-600ms;
+    z-index: 1;
     .close-icon{
         position: absolute;
         top: 0;

@@ -29,3 +29,23 @@ searchArea.addEventListener("click",function(){
     headerSearchArea.classList.toggle("show")
 }
 )
+
+
+// Home Section Slider
+const homeSlide=document.querySelector(".home-slide")
+const slides=document.querySelectorAll(".home-slide")
+const auto=true
+let interval
+const nextSlide=()=>{
+    const activeSlide=document.querySelector(".active")
+    activeSlide.classList.remove("active")
+    if(activeSlide.nextElementSibling){
+        activeSlide.nextElementSibling.classList.add("active")
+    }else{
+        slides[0].classList.add("active")
+    }
+}
+
+if(auto){
+    interval=setInterval(nextSlide, 4000);
+}
