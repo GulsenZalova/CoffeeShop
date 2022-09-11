@@ -364,6 +364,33 @@ body {
   height: 100%;
   overflow: hidden;
 }
+.home-slider .down {
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  transform: translate(-50%, 50%);
+  font-size: 70px;
+  color: #d3ad7f;
+  padding: 20px;
+  -webkit-animation: down 2s infinite;
+          animation: down 2s infinite;
+}
+@-webkit-keyframes down {
+  0% {
+    bottom: 7%;
+  }
+  50% {
+    bottom: 15%;
+  }
+}
+@keyframes down {
+  0% {
+    bottom: 7%;
+  }
+  50% {
+    bottom: 15%;
+  }
+}
 .home-slider .home-slide {
   background-color: red;
   position: absolute;
